@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/user') }}" class="nav-link {{ ($activeMenu == 'user')? 'active' : '' }}">
+            <a href="{{ url('evaluasi1') }}" class="nav-link {{ ($activeMenu == 'evaluasi')? 'active' : '' }}">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>Evaluasi</p>
             </a>
