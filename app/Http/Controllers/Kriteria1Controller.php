@@ -9,9 +9,37 @@ class Kriteria1Controller extends Controller {
         'list' => ['Kriteria 1', 'Penetapan']
         ];
 
-        $activeMenu = 'level'; // Sesuai sidebar
+        $activeMenu = 'penetapan';
 
         return view('penetapan.kriteria1', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+
+    public function storePelaksanaan(Request $request)
+    {
+        // Validasi dan simpan data
+        $request->validate([
+            'deskripsi' => 'required|string',
+            'link' => 'nullable|url',
+            'dokumen' => 'nullable|file|mimes:pdf,doc,docx'
+        ]);
+
+        // Simpan logika atau database di sini...
+
+        return back()->with('success', 'Data berhasil disimpan.');
+    }
+
+    public function pelaksanaan() {
+        $breadcrumb = (object) [
+        'title' => 'Pelaksanaan',
+        'list' => ['Kriteria 1', 'Pelaksanaan']
+        ];
+
+        $activeMenu = 'pelaksanaan';
+
+        return view('pelaksanaan.kriteria1', [
             'breadcrumb' => $breadcrumb,
             'activeMenu' => $activeMenu
         ]);

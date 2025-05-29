@@ -24,13 +24,13 @@
           </li>
           <li class="nav-header">Kriteria 1</li>
           <li class="nav-item">
-            <a href="{{ url('penetapan') }}" class="nav-link {{ ($activeMenu == 'level')? 'active' : '' }} ">
+            <a href="{{ url('penetapan1') }}" class="nav-link {{ ($activeMenu == 'penetapan')? 'active' : '' }} ">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>Penetapan</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/user') }}" class="nav-link {{ ($activeMenu == 'user')? 'active' : '' }}">
+            <a href="{{ url('pelaksanaan1') }}" class="nav-link {{ ($activeMenu == 'pelaksanaan')? 'active' : '' }}">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>Pelaksanaan</p>
             </a>
