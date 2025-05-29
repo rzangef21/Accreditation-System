@@ -35,7 +35,11 @@
                 <input type="file" name="dokumen" class="form-control-file">
             </div>
 
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <div class="mt-3">
+                <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
+                <button type="submit" name="action" value="delete" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
+            </div>
         </form>
     </div>
 </div>
