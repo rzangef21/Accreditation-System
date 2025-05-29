@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('layouts.template')
 
 {{-- Extend and customize the browser title --}} 
 @section('title')
