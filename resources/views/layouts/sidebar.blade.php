@@ -55,9 +55,9 @@
           </li>
           <li class="nav-header">Feedback</li>
           <li class="nav-item">
-            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == 'penetapan')? 'active' : '' }} ">
+            <a href="{{ url('feedback1') }}" class="nav-link {{ ($activeMenu == 'feedback')? 'active' : '' }} ">
               <i class="nav-icon fas fa-envelope"></i>
-              <p>Penetapan</p>
+              <p>Lihat Data</p>
             </a>
           </li>
           <li class="nav-item">

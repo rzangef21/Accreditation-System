@@ -3,6 +3,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class Kriteria1Controller extends Controller {
+    public function feedback()
+    {
+        $breadcrumb = (object) [
+            'title' => 'Inputan Dokumen',
+            'list' => ['Feedback', 'Dokumen']
+        ];
+
+        $page = (object) [
+            'title' => 'Daftar dokumen pada kriteria 1'
+        ];
+
+        $activeMenu = 'feedback';
+
+        return view('feedback.feedback1', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+    
     public function peningkatan() {
         $breadcrumb = (object) [
         'title' => 'Peningkatan',
