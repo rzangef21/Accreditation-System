@@ -24,3 +24,5 @@ Route::get('/evaluasi1', [Kriteria1Controller::class, 'evaluasi'])->name('evalua
 Route::post('/evaluasi1/store', [Kriteria1Controller::class, 'storeEvaluasi'])->name('evaluasi1.store'); //Route untuk menyimpan Evaluasi pada kriteria 1
 Route::get('/pengendalian1', [Kriteria1Controller::class, 'pengendalian'])->name('pengendalian1.pelaksanaan'); //Route untuk menampilkan Pengendalian pada kriteria 1
 Route::post('/pengendalian1/store', [Kriteria1Controller::class, 'storePengendalian'])->name('pengendalian1.store'); //Route untuk menyimpan Pengendalian pada kriteria 1
+Route::get('/peningkatan1', [Kriteria1Controller::class, 'peningkatan'])->name('peningkatan1.pelaksanaan'); //Route untuk menampilkan Peningkatan pada kriteria 1
+Route::post('/peningkatan1/store', [Kriteria1Controller::class, 'storePeningkatan'])->name('peningkatan1.store'); //Route untuk menyimpan Peningkatan pada kriteria 1
