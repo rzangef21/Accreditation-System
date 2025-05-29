@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('/user') }}" class="nav-link {{ ($activeMenu == 'user')? 'active' : '' }}">
+            <a href="{{ url('pengendalian1') }}" class="nav-link {{ ($activeMenu == 'pengendalian')? 'active' : '' }}">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>Pengendalian</p>
             </a>

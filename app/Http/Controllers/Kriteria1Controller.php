@@ -3,6 +3,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class Kriteria1Controller extends Controller {
+    public function pengendalian() {
+        $breadcrumb = (object) [
+        'title' => 'Pengendalian',
+        'list' => ['Kriteria 1', 'Pengendalian']
+        ];
+
+        $activeMenu = 'pengendalian';
+
+        return view('pengendalian.kriteria1', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+
+    public function storePengendalian(Request $request)
+    {
+        // Validasi dan simpan data
+        $request->validate([
+            'deskripsi' => 'required|string',
+            'link' => 'nullable|url',
+            'dokumen' => 'nullable|file|mimes:pdf,doc,docx'
+        ]);
+
+        // Simpan logika atau database di sini...
+
+        return back()->with('success', 'Data berhasil disimpan.');
+    }
+
     public function evaluasi() {
         $breadcrumb = (object) [
         'title' => 'Evaluasi',
