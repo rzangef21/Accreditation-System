@@ -60,30 +60,6 @@
               <p>Lihat Data</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == 'pelaksanaan')? 'active' : '' }}">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>Pelaksanaan</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == 'evaluasi')? 'active' : '' }}">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>Evaluasi</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == 'pengendalian')? 'active' : '' }}">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>Pengendalian</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == 'peningkatan')? 'active' : '' }}">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>Peningkatan</p>
-            </a>
-          </li>
     </ul>
   </nav>
 </div>
