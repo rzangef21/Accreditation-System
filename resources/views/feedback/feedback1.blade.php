@@ -6,7 +6,7 @@
     <h3 class="card-title">Kriteria 1</h3>
   </div>
   <div class="card-body">
-    <table class="table table-bordered table-striped table-hover table-sm" id="feedback1">
+    <table class="table table-bordered table-striped table-hover table-sm" id="feedback1" width="100%">
       <thead>
         <tr>
           <th>ID Dokumen</th>
@@ -38,7 +38,7 @@
       columns: [
         {
         data: "id_dokumen",
-        className: "",
+        className: "text-center",
         orderable: false,
         searchable: false,
         },
