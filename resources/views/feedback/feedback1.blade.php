@@ -20,6 +20,7 @@
     </table>
   </div>
 </div>
+<div id="myModal" class="modal fade animate shake" tabindex="-1" role="dialog" databackdrop="static" data-keyboard="false" data-width="75%" aria-hidden="true"></div>
 @endsection
 
 @push('css')
@@ -27,8 +28,15 @@
 
 @push('js')
 <script>
+  function modalAction(url = ''){
+    $('#myModal').load(url, function(){
+      $('#myModal').modal('show');
+    });
+  }
+
+  var dataKriteria1;
   $(document).ready(function(){
-    var dataKriteria1 = $('#feedback1').DataTable({
+    dataKriteria1 = $('#feedback1').DataTable({
       serverSide: true,
       ajax: {
         "url": "{{ url('feedback1/list') }}",

@@ -5,6 +5,15 @@ use App\Models\DokumenModel;
 use Yajra\DataTables\DataTables;
 
 class Kriteria1Controller extends Controller {
+    public function edit_ajax(string $id)
+    {
+        $dokumen = DokumenModel::find($id);
+
+        return view('feedback.edit_ajax1', [
+            'dokumen' => $dokumen
+        ]);
+    }
+
     public function list(Request $request){
         $data = DokumenModel::with(['validasi', 'tahap'])
             ->where('id_kriteria', 'K-01') // Sesuai dengan kriteria 1
@@ -31,11 +40,8 @@ class Kriteria1Controller extends Controller {
 
         // Tambah kolom aksi (tombol HTML)
         ->addColumn('aksi', function ($row) {
-            $btn  = '<a href="' . url('' . $row->id_dokumen) . '" class="btn btn-warning btn-sm">Edit</a> ';
-            $btn .= '<form class="d-inline-block" method="POST" action="' . url('' . $row->id_dokumen) . '">'
-                . csrf_field() . method_field('DELETE') .
-                '<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah Anda yakin menghapus dokumen ini?\');">Hapus</button>'
-                . '</form>';
+            $btn  = '<button onclick="modalAction(\''.url('/feedback1/' . $row->id_dokumen . '/edit_ajax').'\')" class="btn btn-warning btn-sm">Edit</button> ';
+            $btn .= '<button onclick="modalAction(\''.url('').'\')" class="btn btn-danger btn-sm">Hapus</button>';
             return $btn;
         })
 
