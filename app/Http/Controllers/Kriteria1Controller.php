@@ -6,7 +6,9 @@ use Yajra\DataTables\DataTables;
 
 class Kriteria1Controller extends Controller {
     public function list(Request $request){
-        $data = DokumenModel::with(['tahap', 'validasi'])->select('dokumen.*');
+        $data = DokumenModel::with(['validasi', 'tahap'])
+            ->where('id_kriteria', 'K-01') // Sesuai dengan kriteria 1
+            ->get();
         
         return DataTables::of($data)
         // Kolom index (nomor urut)
@@ -19,7 +21,7 @@ class Kriteria1Controller extends Controller {
 
         // Menambahkan kolom status (dari validasi)
         ->addColumn('status', function ($row) {
-            return $row->validasi ? $row->validasi->status : '-';
+            return $row->validasi->status ?? 'menunggu';
         })
 
         // Menambahkan kolom komentar (dari validasi)
@@ -29,8 +31,7 @@ class Kriteria1Controller extends Controller {
 
         // Tambah kolom aksi (tombol HTML)
         ->addColumn('aksi', function ($row) {
-            $btn  = '<a href="' . url('' . $row->id_dokumen) . '" class="btn btn-info btn-sm">Detail</a> ';
-            $btn .= '<a href="' . url('' . $row->id_dokumen . '/edit') . '" class="btn btn-warning btn-sm">Edit</a> ';
+            $btn  = '<a href="' . url('' . $row->id_dokumen) . '" class="btn btn-warning btn-sm">Edit</a> ';
             $btn .= '<form class="d-inline-block" method="POST" action="' . url('' . $row->id_dokumen) . '">'
                 . csrf_field() . method_field('DELETE') .
                 '<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah Anda yakin menghapus dokumen ini?\');">Hapus</button>'
