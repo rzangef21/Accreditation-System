@@ -2,8 +2,77 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DokumenModel;
+use Yajra\DataTables\DataTables;
 
 class Kriteria1Controller extends Controller {
+    public function list(Request $request){
+        $data = DokumenModel::with(['tahap', 'validasi'])->select('dokumen.*');
+        
+        return DataTables::of($data)
+        // Kolom index (nomor urut)
+        ->addIndexColumn()
+
+        // Menambahkan kolom tahap (nama_tahap dari relasi)
+        ->addColumn('nama_tahap', function ($row) {
+            return $row->tahap ? $row->tahap->nama_tahap : '-';
+        })
+
+        // Menambahkan kolom status (dari validasi)
+        ->addColumn('status', function ($row) {
+            return $row->validasi ? $row->validasi->status : '-';
+        })
+
+        // Menambahkan kolom komentar (dari validasi)
+        ->addColumn('komentar', function ($row) {
+            return $row->validasi ? $row->validasi->komentar : '-';
+        })
+
+        // Tambah kolom aksi (tombol HTML)
+        ->addColumn('aksi', function ($row) {
+            $btn  = '<a href="' . url('' . $row->id_dokumen) . '" class="btn btn-info btn-sm">Detail</a> ';
+            $btn .= '<a href="' . url('' . $row->id_dokumen . '/edit') . '" class="btn btn-warning btn-sm">Edit</a> ';
+            $btn .= '<form class="d-inline-block" method="POST" action="' . url('' . $row->id_dokumen) . '">'
+                . csrf_field() . method_field('DELETE') .
+                '<button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Apakah Anda yakin menghapus dokumen ini?\');">Hapus</button>'
+                . '</form>';
+            return $btn;
+        })
+
+        // Tandai kolom 'aksi' berisi HTML
+        ->rawColumns(['aksi'])
+
+        // Sesuaikan penamaan kolom agar cocok dengan frontend
+        ->editColumn('id_dokumen', function ($row) {
+            return $row->id_dokumen;
+        })
+        ->editColumn('nama_dokumen', function ($row) {
+            return $row->nama_dokumen ?? '-';
+        })
+
+        ->make(true);
+    }
+
+    public function getFeedback1(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = DokumenModel::with(['validasi', 'tahap'])
+                ->where('id_kriteria', 'K-01') // Sesuai dengan kriteria 1
+                ->get();
+
+            return DataTables::of($data)
+                ->addColumn('id_dokumen', fn($row) => $row->id_dokumen)
+                ->addColumn('nama_dokumen', fn($row) => $row->nama_dokumen)
+                ->addColumn('nama_tahap', fn($row) => $row->tahap->nama_tahap ?? '-')
+                ->addColumn('status', fn($row) => $row->validasi->status ?? 'menunggu')
+                ->addColumn('komentar', fn($row) => $row->validasi->komentar ?? '-')
+                ->addColumn('aksi', function($row) {
+                    return '<a href="#" class="btn btn-sm btn-info">Detail</a>';
+                })
+                ->rawColumns(['aksi'])
+                ->make(true);
+        }
+    }
+
     public function feedback()
     {
         $breadcrumb = (object) [

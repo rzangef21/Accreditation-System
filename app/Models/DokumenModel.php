@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class DokumenModel extends Model
 {
+    use HasFactory;
     protected $table = 'dokumen';
     protected $primaryKey = 'id_dokumen';
     public $timestamps = false;
@@ -19,4 +20,14 @@ class DokumenModel extends Model
         'link',
         'file',
     ];
+
+    public function validasi()
+    {
+        return $this->hasOne(ValidasiModel::class, 'id_dokumen', 'id_dokumen');
+    }
+
+    public function tahap()
+    {
+        return $this->belongsTo(TahapModel::class, 'id_tahap', 'id_tahap');
+    }
 }

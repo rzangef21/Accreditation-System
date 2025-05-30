@@ -27,6 +27,53 @@
 
 @push('js')
 <script>
-  
+  $(document).ready(function(){
+    var dataKriteria1 = $('#feedback1').DataTable({
+      serverSide: true,
+      ajax: {
+        "url": "{{ url('feedback1/list') }}",
+        "dataType": "json",
+        "type": "POST"
+      },
+      columns: [
+        {
+        data: "id_dokumen",
+        className: "",
+        orderable: false,
+        searchable: false,
+        },
+        {
+        data: "nama_dokumen",
+        className: "",
+        orderable: false,
+        searchable: false,
+        },
+        {
+        data: "tahap.nama_tahap",
+        className: "",
+        orderable: false,
+        searchable: false,
+        },
+        {
+        data: "status",
+        className: "",
+        orderable: false,
+        searchable: false,
+        },
+        {
+        data: "komentar",
+        className: "",
+        orderable: false,
+        searchable: false,
+        },
+        {
+        data: "aksi",
+        className: "",
+        orderable: false,
+        searchable: false,
+        }
+      ]
+    });
+  });
 </script>
 @endpush
