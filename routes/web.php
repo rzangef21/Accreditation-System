@@ -30,6 +30,7 @@ Route::post('/peningkatan1/store', [Kriteria1Controller::class, 'storePeningkata
 Route::get('/feedback1', [Kriteria1Controller::class, 'feedback'])->name('feedback1.feedback'); //Route untuk menampilkan Lihat Data pada kriteria 1
 Route::post('/feedback1/list', [Kriteria1Controller::class, 'list'])->name('feedback1.list'); //Route untuk menampilkan Isi Lihat Data pada kriteria 1
 
+
 //Kriteria 2
 Route::get('/', [WelcomeController::class,'index']);
 Route::get('/penetapan2', [Kriteria2Controller::class, 'penetapan'])->name('penetapan2.penetapan'); //Route untuk menampilkan Penetapan pada kriteria 2
