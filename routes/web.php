@@ -30,6 +30,7 @@ Route::post('/peningkatan1/store', [Kriteria1Controller::class, 'storePeningkata
 Route::get('/feedback1', [Kriteria1Controller::class, 'feedback'])->name('feedback1.feedback'); //Route untuk menampilkan Lihat Data pada kriteria 1
 Route::post('/feedback1/list', [Kriteria1Controller::class, 'list'])->name('feedback1.list'); //Route untuk menampilkan Isi Lihat Data pada kriteria 1
 Route::get('/feedback1/{id}/edit_ajax', [Kriteria1Controller::class, 'edit_ajax'])->name('feedback1.edit_ajax'); //Menampilkan form edit Kriteria 1 Ajax
+Route::put('/feedback1/{id}/update_ajax', [Kriteria1Controller::class, 'update_ajax'])->name('feedback1.update_ajax'); //Menyimpan perubahan data Kriteria1
 
 //Kriteria 2
 Route::get('/', [WelcomeController::class,'index']);

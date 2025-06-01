@@ -17,7 +17,7 @@
         </div>
     </div>
 @else
-    <form action="{{ url('/feedback/' . $dokumen->id_dokumen . '/update_ajax') }}" method="POST" id="form-edit" enctype="multipart/form-data">
+    <form action="{{ url('/feedback1/' . $dokumen->id_dokumen . '/update_ajax') }}" method="POST" id="form-edit" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -75,10 +75,14 @@
                     file: { extension: "pdf|doc|docx|jpg|jpeg|png" }
                 },
                 submitHandler: function(form) {
+                    let formData = new FormData(form);
+
                     $.ajax({
                         url: form.action,
                         type: form.method,
-                        data: formData.serialize(),
+                        data: formData,
+                        contentType: false,
+                        processData: false,
                         success: function(response) {
                             if(response.status) {
                                 $('#myModal').modal('hide');
@@ -103,7 +107,7 @@
                     });
 
                     return false;
-                },
+                },               
                 errorElement: 'span',
                 errorPlacement: function(error, element) {
                     error.addClass('invalid-feedback');

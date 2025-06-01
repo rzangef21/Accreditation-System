@@ -3,8 +3,57 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DokumenModel;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class Kriteria1Controller extends Controller {
+    public function update_ajax(Request $request, string $id)
+    {
+        $dokumen = DokumenModel::find($id);
+
+        if (!$dokumen) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Dokumen tidak ditemukan.'
+            ]);
+        }
+
+        // Validasi input
+        $validator = Validator::make($request->all(), [
+            'nama_dokumen' => 'required|string|max:255',
+            'isi' => 'required|string',
+            'link' => 'nullable|url',
+            'file' => 'nullable|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Validasi gagal',
+                'msgField' => $validator->errors()
+            ]);
+        }
+
+        // Simpan perubahan ke database
+        $dokumen->nama_dokumen = $request->nama_dokumen;
+        $dokumen->isi = $request->isi;
+        $dokumen->link = $request->link;
+
+        // Jika ada file baru diupload
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('storage/kriteria1'), $filename);
+            $dokumen->file = $filename;
+        }
+
+        $dokumen->save();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Data dokumen berhasil diperbarui.'
+        ]);
+    }
+
     public function edit_ajax(string $id)
     {
         $dokumen = DokumenModel::find($id);
