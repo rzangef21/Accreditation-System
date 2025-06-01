@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Models\DokumenModel;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class Kriteria1Controller extends Controller {
     public function update_ajax(Request $request, string $id)
@@ -41,9 +42,11 @@ class Kriteria1Controller extends Controller {
         // Jika ada file baru diupload
         if ($request->hasFile('file')) {
             $file = $request->file('file');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('storage/kriteria1'), $filename);
-            $dokumen->file = $filename;
+            $randomName = Str::random(15);
+            $extension = $file->getClientOriginalExtension();
+            $newFileName = $randomName . '.' . $extension;
+            $file->move(public_path('storage/kriteria1'), $newFileName);
+            $dokumen->file = $newFileName;
         }
 
         $dokumen->save();
