@@ -1,63 +1,119 @@
 <div class="sidebar">
-      <!-- SidebarSearch Form -->
-      <div class="form-inline mt-2">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+
+          {{-- Sidebar untuk Input Data--}}
+          <li class="nav-header">Input Data</li>
           <li class="nav-item">
-            <a href="{{ url('/') }}" class="nav-link {{ ($activeMenu == 'dashboard')? 'active' : '' }} ">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-header">Kriteria 1</li>
-          <li class="nav-item">
-            <a href="{{ url('penetapan1') }}" class="nav-link {{ ($activeMenu == 'penetapan')? 'active' : '' }} ">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
               <i class="nav-icon fas fa-layer-group"></i>
-              <p>Penetapan</p>
+              <p>Kriteria 1</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('pelaksanaan1') }}" class="nav-link {{ ($activeMenu == 'pelaksanaan')? 'active' : '' }}">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
               <i class="nav-icon fas fa-layer-group"></i>
-              <p>Pelaksanaan</p>
+              <p>Kriteria 2</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('evaluasi1') }}" class="nav-link {{ ($activeMenu == 'evaluasi')? 'active' : '' }}">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
               <i class="nav-icon fas fa-layer-group"></i>
-              <p>Evaluasi</p>
+              <p>Kriteria 3</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('pengendalian1') }}" class="nav-link {{ ($activeMenu == 'pengendalian')? 'active' : '' }}">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
               <i class="nav-icon fas fa-layer-group"></i>
-              <p>Pengendalian</p>
+              <p>Kriteria 4</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ url('peningkatan1') }}" class="nav-link {{ ($activeMenu == 'peningkatan')? 'active' : '' }}">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
               <i class="nav-icon fas fa-layer-group"></i>
-              <p>Peningkatan</p>
+              <p>Kriteria 5</p>
             </a>
           </li>
-          <li class="nav-header">Feedback</li>
           <li class="nav-item">
-            <a href="{{ url('feedback1') }}" class="nav-link {{ ($activeMenu == 'feedback')? 'active' : '' }} ">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
+              <i class="nav-icon fas fa-layer-group"></i>
+              <p>Kriteria 6</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
+              <i class="nav-icon fas fa-layer-group"></i>
+              <p>Kriteria 7</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
+              <i class="nav-icon fas fa-layer-group"></i>
+              <p>Kriteria 8</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }}">
+              <i class="nav-icon fas fa-layer-group"></i>
+              <p>Kriteria 9</p>
+            </a>
+          </li>
+
+          {{-- Sidebar untuk Melihat Data--}}
+          <li class="nav-header">Lihat Data</li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
               <i class="nav-icon fas fa-envelope"></i>
-              <p>Lihat Data</p>
+              <p>Kriteria 1</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 2</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 3</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 4</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 5</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 6</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 7</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 8</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>Kriteria 9</p>
             </a>
           </li>
     </ul>
