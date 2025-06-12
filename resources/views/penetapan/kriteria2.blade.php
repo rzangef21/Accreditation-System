@@ -43,7 +43,7 @@
             </div>
         </form>
 
-        <hr class="my-5">
+        <hr class="my-5" style="border-top: 2px solid #6c757d;">
 
         {{-- ================= SECTION PELAKSANAAN ================= --}}
         <h4 class="mb-3"><strong>Pelaksanaan</strong></h4>
@@ -80,7 +80,7 @@
             </div>
         </form>
 
-        <hr class="my-5">
+        <hr class="my-5" style="border-top: 2px solid #6c757d;">
 
         {{-- ================= SECTION EVALUASI ================= --}}
         <h4 class="mb-3"><strong>Evaluasi</strong></h4>
@@ -97,6 +97,80 @@
             <div class="form-group">
                 <label for="deskripsi">Deskripsi</label>
                 <textarea id="summernote-evaluasi" name="deskripsi" class="form-control" rows="6"></textarea>
+            </div>
+
+            {{-- Input link --}}
+            <div class="form-group">
+                <label for="link">Link</label>
+                <input type="url" name="link" class="form-control">
+            </div>
+
+            {{-- Upload file --}}
+            <div class="form-group">
+                <label for="dokumen">Unggah Dokumen</label>
+                <input type="file" name="dokumen" class="form-control-file">
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
+            </div>
+        </form>
+
+        <hr class="my-5" style="border-top: 2px solid #6c757d;">
+
+        {{-- ================= SECTION PENGENDALIAN ================= --}}
+        <h4 class="mb-3"><strong>Pengendalian</strong></h4>
+        <form action="{{ route('pengendalian2.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            {{-- Input Judul Pengendalian --}}
+            <div class="form-group">
+                <label for="judul">Judul Pengendalian</label>
+                <input type="text" name="judul" id="judul" class="form-control">
+            </div>
+
+            {{-- Input teks panjang dengan Summernote --}}
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi</label>
+                <textarea id="summernote-pengendalian" name="deskripsi" class="form-control" rows="6"></textarea>
+            </div>
+
+            {{-- Input link --}}
+            <div class="form-group">
+                <label for="link">Link</label>
+                <input type="url" name="link" class="form-control">
+            </div>
+
+            {{-- Upload file --}}
+            <div class="form-group">
+                <label for="dokumen">Unggah Dokumen</label>
+                <input type="file" name="dokumen" class="form-control-file">
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
+            </div>
+        </form>
+
+        <hr class="my-5" style="border-top: 2px solid #6c757d;">
+
+        {{-- ================= SECTION PENINGKATAN ================= --}}
+        <h4 class="mb-3"><strong>Peningkatan</strong></h4>
+        <form action="{{ route('peningkatan2.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            {{-- Input Judul Penetapan --}}
+            <div class="form-group">
+                <label for="judul">Judul Peningkatan</label>
+                <input type="text" name="judul" id="judul" class="form-control">
+            </div>
+
+            {{-- Input teks panjang dengan Summernote --}}
+            <div class="form-group">
+                <label for="deskripsi">Deskripsi</label>
+                <textarea id="summernote-peningkatan" name="deskripsi" class="form-control" rows="6"></textarea>
             </div>
 
             {{-- Input link --}}
@@ -162,6 +236,34 @@
                 ]
             });
             $('#summernote-evaluasi').summernote({
+                height: 200,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+            $('#summernote-pengendalian').summernote({
+                height: 200,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+            $('#summernote-peningkatan').summernote({
                 height: 200,
                 toolbar: [
                     ['style', ['style']],
