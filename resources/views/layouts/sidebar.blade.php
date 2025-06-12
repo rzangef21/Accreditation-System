@@ -6,7 +6,7 @@
           {{-- Sidebar untuk Input Data--}}
           <li class="nav-header">Input Data</li>
           <li class="nav-item">
-            <a href="{{ url('kriteria1') }}" class="nav-link {{ ($activeMenu == 'kriteria1')? 'active' : '' }} ">
+            <a href="{{ url('/') }}" class="nav-link {{ ($activeMenu == 'kriteria1')? 'active' : '' }} ">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>Kriteria 1</p>
             </a>
