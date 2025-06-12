@@ -15,8 +15,18 @@ use App\Http\Controllers\Kriteria2Controller;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Menampilkan Tampilan Untuk Input Data
+Route::get('/', [Kriteria1Controller::class, 'kriteria1'])->name('kriteria1'); //Kriteria 1
+Route::get('/kriteria2', [Kriteria1Controller::class, 'kriteria2'])->name('kriteria2'); //Kriteria 2
+Route::get('/kriteria3', [Kriteria1Controller::class, 'kriteria3'])->name('kriteria3'); //Kriteria 3
+Route::get('/kriteria4', [Kriteria1Controller::class, 'kriteria4'])->name('kriteria4'); //Kriteria 4
+Route::get('/kriteria5', [Kriteria1Controller::class, 'kriteria5'])->name('kriteria5'); //Kriteria 5
+Route::get('/kriteria6', [Kriteria1Controller::class, 'kriteria6'])->name('kriteria6'); //Kriteria 6
+Route::get('/kriteria7', [Kriteria1Controller::class, 'kriteria7'])->name('kriteria7'); //Kriteria 7
+Route::get('/kriteria8', [Kriteria1Controller::class, 'kriteria8'])->name('kriteria8'); //Kriteria 8
+Route::get('/kriteria9', [Kriteria1Controller::class, 'kriteria9'])->name('kriteria9'); //Kriteria 9
+
 //Kriteria 1
-Route::get('/', [WelcomeController::class,'index']);
 Route::get('/penetapan1', [Kriteria1Controller::class, 'penetapan'])->name('penetapan1.penetapan'); //Route untuk menampilkan Penetapan pada kriteria 1
 Route::post('/penetapan1/store', [Kriteria1Controller::class, 'storePenetapan'])->name('penetapan1.store'); //Route untuk menyimpan Penetapan pada kriteria 1
 Route::get('/pelaksanaan1', [Kriteria1Controller::class, 'pelaksanaan'])->name('pelaksanaan1.pelaksanaan'); //Route untuk menampilkan Pelaksanaan pada kriteria 1
@@ -33,7 +43,6 @@ Route::get('/feedback1/{id}/edit_ajax', [Kriteria1Controller::class, 'edit_ajax'
 Route::put('/feedback1/{id}/update_ajax', [Kriteria1Controller::class, 'update_ajax'])->name('feedback1.update_ajax'); //Menyimpan perubahan data Kriteria1
 
 //Kriteria 2
-Route::get('/', [WelcomeController::class,'index']);
 Route::get('/penetapan2', [Kriteria2Controller::class, 'penetapan'])->name('penetapan2.penetapan'); //Route untuk menampilkan Penetapan pada kriteria 2
 Route::post('/penetapan2/store', [Kriteria2Controller::class, 'storePenetapan'])->name('penetapan2.store'); //Route untuk menyimpan Penetapan pada kriteria 2
 Route::get('/pelaksanaan2', [Kriteria2Controller::class, 'pelaksanaan'])->name('pelaksanaan2.pelaksanaan'); //Route untuk menampilkan Pelaksanaan pada kriteria 2
