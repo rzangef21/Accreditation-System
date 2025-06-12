@@ -8,183 +8,164 @@
 @section('content_body')
 <div class="card">
     <div class="card-body">
-        {{-- ================= SECTION PENETAPAN ================= --}}
-        <h4 class="mb-3"><strong>Penetapan</strong></h4>
         <form action="{{ route('penetapan2.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+            {{-- ================= SECTION PENETAPAN ================= --}}
+            <h4 class="mb-3"><strong>Penetapan</strong></h4>
+            <form action="{{ route('penetapan2.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-            {{-- Input Judul Penetapan --}}
-            <div class="form-group">
-                <label for="judul">Judul Penetapan</label>
-                <input type="text" name="judul" id="judul" class="form-control">
-            </div>
+                {{-- Input Judul Penetapan --}}
+                <div class="form-group">
+                    <label for="judul">Judul Penetapan</label>
+                    <input type="text" name="judul" id="judul" class="form-control">
+                </div>
 
-            {{-- Input teks panjang dengan Summernote --}}
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi</label>
-                <textarea id="summernote-penetapan" name="deskripsi" class="form-control" rows="6"></textarea>
-            </div>
+                {{-- Input teks panjang dengan Summernote --}}
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea id="summernote-penetapan" name="deskripsi" class="form-control" rows="6"></textarea>
+                </div>
 
-            {{-- Input link --}}
-            <div class="form-group">
-                <label for="link">Link</label>
-                <input type="url" name="link" class="form-control">
-            </div>
+                {{-- Input link --}}
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="url" name="link" class="form-control">
+                </div>
 
-            {{-- Upload file --}}
-            <div class="form-group">
-                <label for="dokumen">Unggah Dokumen</label>
-                <input type="file" name="dokumen" class="form-control-file">
-            </div>
+                {{-- Upload file --}}
+                <div class="form-group">
+                    <label for="dokumen">Unggah Dokumen</label>
+                    <input type="file" name="dokumen" class="form-control-file">
+                </div>
+            </form>
 
-            <div class="mt-3">
-                <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
-            </div>
-        </form>
+            <hr class="my-5" style="border-top: 2px solid #6c757d;">
 
-        <hr class="my-5" style="border-top: 2px solid #6c757d;">
+            {{-- ================= SECTION PELAKSANAAN ================= --}}
+            <h4 class="mb-3"><strong>Pelaksanaan</strong></h4>
+            <form action="{{ route('pelaksanaan2.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-        {{-- ================= SECTION PELAKSANAAN ================= --}}
-        <h4 class="mb-3"><strong>Pelaksanaan</strong></h4>
-        <form action="{{ route('pelaksanaan2.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+                {{-- Input Judul Pelaksanaan --}}
+                <div class="form-group">
+                    <label for="judul">Judul Pelaksanaan</label>
+                    <input type="text" name="judul" id="judul" class="form-control">
+                </div>
 
-            {{-- Input Judul Pelaksanaan --}}
-            <div class="form-group">
-                <label for="judul">Judul Pelaksanaan</label>
-                <input type="text" name="judul" id="judul" class="form-control">
-            </div>
+                {{-- Input teks panjang dengan Summernote --}}
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea id="summernote-pelaksanaan" name="deskripsi" class="form-control" rows="6"></textarea>
+                </div>
 
-            {{-- Input teks panjang dengan Summernote --}}
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi</label>
-                <textarea id="summernote-pelaksanaan" name="deskripsi" class="form-control" rows="6"></textarea>
-            </div>
+                {{-- Input link --}}
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="url" name="link" class="form-control">
+                </div>
 
-            {{-- Input link --}}
-            <div class="form-group">
-                <label for="link">Link</label>
-                <input type="url" name="link" class="form-control">
-            </div>
+                {{-- Upload file --}}
+                <div class="form-group">
+                    <label for="dokumen">Unggah Dokumen</label>
+                    <input type="file" name="dokumen" class="form-control-file">
+                </div>
+            </form>
 
-            {{-- Upload file --}}
-            <div class="form-group">
-                <label for="dokumen">Unggah Dokumen</label>
-                <input type="file" name="dokumen" class="form-control-file">
-            </div>
+            <hr class="my-5" style="border-top: 2px solid #6c757d;">
 
-            <div class="mt-3">
-                <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
-            </div>
-        </form>
+            {{-- ================= SECTION EVALUASI ================= --}}
+            <h4 class="mb-3"><strong>Evaluasi</strong></h4>
+            <form action="{{ route('evaluasi2.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-        <hr class="my-5" style="border-top: 2px solid #6c757d;">
+                {{-- Input Judul Penetapan --}}
+                <div class="form-group">
+                    <label for="judul">Judul Evaluasi</label>
+                    <input type="text" name="judul" id="judul" class="form-control">
+                </div>
 
-        {{-- ================= SECTION EVALUASI ================= --}}
-        <h4 class="mb-3"><strong>Evaluasi</strong></h4>
-        <form action="{{ route('evaluasi2.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+                {{-- Input teks panjang dengan Summernote --}}
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea id="summernote-evaluasi" name="deskripsi" class="form-control" rows="6"></textarea>
+                </div>
 
-            {{-- Input Judul Penetapan --}}
-            <div class="form-group">
-                <label for="judul">Judul Evaluasi</label>
-                <input type="text" name="judul" id="judul" class="form-control">
-            </div>
+                {{-- Input link --}}
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="url" name="link" class="form-control">
+                </div>
 
-            {{-- Input teks panjang dengan Summernote --}}
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi</label>
-                <textarea id="summernote-evaluasi" name="deskripsi" class="form-control" rows="6"></textarea>
-            </div>
+                {{-- Upload file --}}
+                <div class="form-group">
+                    <label for="dokumen">Unggah Dokumen</label>
+                    <input type="file" name="dokumen" class="form-control-file">
+                </div>
+            </form>
 
-            {{-- Input link --}}
-            <div class="form-group">
-                <label for="link">Link</label>
-                <input type="url" name="link" class="form-control">
-            </div>
+            <hr class="my-5" style="border-top: 2px solid #6c757d;">
 
-            {{-- Upload file --}}
-            <div class="form-group">
-                <label for="dokumen">Unggah Dokumen</label>
-                <input type="file" name="dokumen" class="form-control-file">
-            </div>
+            {{-- ================= SECTION PENGENDALIAN ================= --}}
+            <h4 class="mb-3"><strong>Pengendalian</strong></h4>
+            <form action="{{ route('pengendalian2.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-            <div class="mt-3">
-                <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
-            </div>
-        </form>
+                {{-- Input Judul Pengendalian --}}
+                <div class="form-group">
+                    <label for="judul">Judul Pengendalian</label>
+                    <input type="text" name="judul" id="judul" class="form-control">
+                </div>
 
-        <hr class="my-5" style="border-top: 2px solid #6c757d;">
+                {{-- Input teks panjang dengan Summernote --}}
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea id="summernote-pengendalian" name="deskripsi" class="form-control" rows="6"></textarea>
+                </div>
 
-        {{-- ================= SECTION PENGENDALIAN ================= --}}
-        <h4 class="mb-3"><strong>Pengendalian</strong></h4>
-        <form action="{{ route('pengendalian2.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+                {{-- Input link --}}
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="url" name="link" class="form-control">
+                </div>
 
-            {{-- Input Judul Pengendalian --}}
-            <div class="form-group">
-                <label for="judul">Judul Pengendalian</label>
-                <input type="text" name="judul" id="judul" class="form-control">
-            </div>
+                {{-- Upload file --}}
+                <div class="form-group">
+                    <label for="dokumen">Unggah Dokumen</label>
+                    <input type="file" name="dokumen" class="form-control-file">
+                </div>
+            </form>
 
-            {{-- Input teks panjang dengan Summernote --}}
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi</label>
-                <textarea id="summernote-pengendalian" name="deskripsi" class="form-control" rows="6"></textarea>
-            </div>
+            <hr class="my-5" style="border-top: 2px solid #6c757d;">
 
-            {{-- Input link --}}
-            <div class="form-group">
-                <label for="link">Link</label>
-                <input type="url" name="link" class="form-control">
-            </div>
+            {{-- ================= SECTION PENINGKATAN ================= --}}
+            <h4 class="mb-3"><strong>Peningkatan</strong></h4>
+            <form action="{{ route('peningkatan2.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
-            {{-- Upload file --}}
-            <div class="form-group">
-                <label for="dokumen">Unggah Dokumen</label>
-                <input type="file" name="dokumen" class="form-control-file">
-            </div>
+                {{-- Input Judul Penetapan --}}
+                <div class="form-group">
+                    <label for="judul">Judul Peningkatan</label>
+                    <input type="text" name="judul" id="judul" class="form-control">
+                </div>
 
-            <div class="mt-3">
-                <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
-                <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
-            </div>
-        </form>
+                {{-- Input teks panjang dengan Summernote --}}
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea id="summernote-peningkatan" name="deskripsi" class="form-control" rows="6"></textarea>
+                </div>
 
-        <hr class="my-5" style="border-top: 2px solid #6c757d;">
+                {{-- Input link --}}
+                <div class="form-group">
+                    <label for="link">Link</label>
+                    <input type="url" name="link" class="form-control">
+                </div>
 
-        {{-- ================= SECTION PENINGKATAN ================= --}}
-        <h4 class="mb-3"><strong>Peningkatan</strong></h4>
-        <form action="{{ route('peningkatan2.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-
-            {{-- Input Judul Penetapan --}}
-            <div class="form-group">
-                <label for="judul">Judul Peningkatan</label>
-                <input type="text" name="judul" id="judul" class="form-control">
-            </div>
-
-            {{-- Input teks panjang dengan Summernote --}}
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi</label>
-                <textarea id="summernote-peningkatan" name="deskripsi" class="form-control" rows="6"></textarea>
-            </div>
-
-            {{-- Input link --}}
-            <div class="form-group">
-                <label for="link">Link</label>
-                <input type="url" name="link" class="form-control">
-            </div>
-
-            {{-- Upload file --}}
-            <div class="form-group">
-                <label for="dokumen">Unggah Dokumen</label>
-                <input type="file" name="dokumen" class="form-control-file">
-            </div>
-
+                {{-- Upload file --}}
+                <div class="form-group">
+                    <label for="dokumen">Unggah Dokumen</label>
+                    <input type="file" name="dokumen" class="form-control-file">
+                </div>
+            </form>
             <div class="mt-3">
                 <button type="submit" name="action" value="submit" class="btn btn-primary">Submit</button>
                 <button type="submit" name="action" value="draft" class="btn btn-secondary">Simpan</button>
