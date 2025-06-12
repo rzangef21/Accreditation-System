@@ -7,6 +7,126 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class Kriteria1Controller extends Controller {
+    public function kriteria1() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 1']
+        ];
+
+        $activeMenu = 'kriteria1';
+
+        return view('kriteria.kriteria1', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+
+    public function kriteria2() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 2']
+        ];
+
+        $activeMenu = 'kriteria2';
+
+        return view('kriteria.kriteria2', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+    public function kriteria3() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 3']
+        ];
+
+        $activeMenu = 'kriteria3';
+
+        return view('kriteria.kriteria3', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+    public function kriteria4() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 4']
+        ];
+
+        $activeMenu = 'kriteria4';
+
+        return view('kriteria.kriteria4', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+    public function kriteria5() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 5']
+        ];
+
+        $activeMenu = 'kriteria5';
+
+        return view('kriteria.kriteria5', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+    public function kriteria6() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 6']
+        ];
+
+        $activeMenu = 'kriteria6';
+
+        return view('kriteria.kriteria6', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+    public function kriteria7() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 7']
+        ];
+
+        $activeMenu = 'kriteria7';
+
+        return view('kriteria.kriteria7', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+    public function kriteria8() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 8']
+        ];
+
+        $activeMenu = 'kriteria8';
+
+        return view('kriteria.kriteria8', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+
+    public function kriteria9() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 9']
+        ];
+
+        $activeMenu = 'kriteria9';
+
+        return view('kriteria.kriteria9', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+
     public function update_ajax(Request $request, string $id)
     {
         $dokumen = DokumenModel::find($id);
@@ -151,20 +271,6 @@ class Kriteria1Controller extends Controller {
         ]);
     }
     
-    public function peningkatan() {
-        $breadcrumb = (object) [
-        'title' => 'Peningkatan',
-        'list' => ['Kriteria 1', 'Peningkatan']
-        ];
-
-        $activeMenu = 'peningkatan';
-
-        return view('peningkatan.kriteria1', [
-            'breadcrumb' => $breadcrumb,
-            'activeMenu' => $activeMenu
-        ]);
-    }
-
     public function storePeningkatan(Request $request)
     {
         // Validasi dan simpan data
@@ -193,20 +299,6 @@ class Kriteria1Controller extends Controller {
         ]);
 
         return back()->with('success', 'Data berhasil disimpan.');
-    }
-
-    public function pengendalian() {
-        $breadcrumb = (object) [
-        'title' => 'Pengendalian',
-        'list' => ['Kriteria 1', 'Pengendalian']
-        ];
-
-        $activeMenu = 'pengendalian';
-
-        return view('pengendalian.kriteria1', [
-            'breadcrumb' => $breadcrumb,
-            'activeMenu' => $activeMenu
-        ]);
     }
 
     public function storePengendalian(Request $request)
@@ -239,20 +331,6 @@ class Kriteria1Controller extends Controller {
         return back()->with('success', 'Data berhasil disimpan.');
     }
 
-    public function evaluasi() {
-        $breadcrumb = (object) [
-        'title' => 'Evaluasi',
-        'list' => ['Kriteria 1', 'Evaluasi']
-        ];
-
-        $activeMenu = 'evaluasi';
-
-        return view('evaluasi.kriteria1', [
-            'breadcrumb' => $breadcrumb,
-            'activeMenu' => $activeMenu
-        ]);
-    }
-
     public function storeEvaluasi(Request $request)
     {
         // Validasi dan simpan data
@@ -283,20 +361,6 @@ class Kriteria1Controller extends Controller {
         return back()->with('success', 'Data berhasil disimpan.');
     }
 
-    public function penetapan() {
-        $breadcrumb = (object) [
-        'title' => 'Penetapan',
-        'list' => ['Kriteria 1', 'Penetapan']
-        ];
-
-        $activeMenu = 'penetapan';
-
-        return view('penetapan.kriteria1', [
-            'breadcrumb' => $breadcrumb,
-            'activeMenu' => $activeMenu
-        ]);
-    }
-
     public function storePelaksanaan(Request $request)
     {
         // Validasi dan simpan data
@@ -325,20 +389,6 @@ class Kriteria1Controller extends Controller {
         ]);
 
         return back()->with('success', 'Data berhasil disimpan.');
-    }
-
-    public function pelaksanaan() {
-        $breadcrumb = (object) [
-        'title' => 'Pelaksanaan',
-        'list' => ['Kriteria 1', 'Pelaksanaan']
-        ];
-
-        $activeMenu = 'pelaksanaan';
-
-        return view('pelaksanaan.kriteria1', [
-            'breadcrumb' => $breadcrumb,
-            'activeMenu' => $activeMenu
-        ]);
     }
     
     public function storePenetapan(Request $request)
