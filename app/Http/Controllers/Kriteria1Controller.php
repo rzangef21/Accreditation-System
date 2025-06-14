@@ -10,7 +10,6 @@ use App\Models\EvaluasiModel;
 use App\Models\PengendalianModel;
 use App\Models\PeningkatanModel;
 use App\Models\Validasi1Model;
-use App\Models\DokumenModel;
 
 class Kriteria1Controller extends Controller {
     public function storeValidasi1(Request $request){
