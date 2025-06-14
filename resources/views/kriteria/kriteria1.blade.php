@@ -33,7 +33,7 @@
                 {{-- Upload file --}}
                 <div class="form-group">
                     <label for="dokumen_penetapan">Unggah Dokumen</label>
-                    <input type="file" name="dokumen_penetapan" class="form-control-file">
+                    <input type="file" name="dokumen_penetapan" class="form-control-file" accept=".pdf">
                 </div>
 
             <hr class="my-5" style="border-top: 2px solid #6c757d;">
@@ -61,7 +61,7 @@
                 {{-- Upload file --}}
                 <div class="form-group">
                     <label for="dokumen_pelaksanaan">Unggah Dokumen</label>
-                    <input type="file" name="dokumen_pelaksanaan" class="form-control-file">
+                    <input type="file" name="dokumen_pelaksanaan" class="form-control-file" accept=".pdf">
                 </div>
 
             <hr class="my-5" style="border-top: 2px solid #6c757d;">
@@ -89,7 +89,7 @@
                 {{-- Upload file --}}
                 <div class="form-group">
                     <label for="dokumen_evaluasi">Unggah Dokumen</label>
-                    <input type="file" name="dokumen_evaluasi" class="form-control-file">
+                    <input type="file" name="dokumen_evaluasi" class="form-control-file" accept=".pdf">
                 </div>
 
             <hr class="my-5" style="border-top: 2px solid #6c757d;">
@@ -117,7 +117,7 @@
                 {{-- Upload file --}}
                 <div class="form-group">
                     <label for="dokumen_pengendalian">Unggah Dokumen</label>
-                    <input type="file" name="dokumen_pengendalian" class="form-control-file">
+                    <input type="file" name="dokumen_pengendalian" class="form-control-file" accept=".pdf">
                 </div>
 
             <hr class="my-5" style="border-top: 2px solid #6c757d;">
@@ -145,7 +145,7 @@
                 {{-- Upload file --}}
                 <div class="form-group">
                     <label for="dokumen_peningkatan">Unggah Dokumen</label>
-                    <input type="file" name="dokumen_peningkatan" class="form-control-file">
+                    <input type="file" name="dokumen_peningkatan" class="form-control-file" accept=".pdf">
                 </div>
 
             <div class="mt-3">

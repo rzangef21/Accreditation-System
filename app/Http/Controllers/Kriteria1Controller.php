@@ -13,7 +13,14 @@ use App\Models\Validasi1Model;
 
 class Kriteria1Controller extends Controller {
     public function storeValidasi1(Request $request){
-        // Validasi input bisa kamu tambahkan sesuai kebutuhan
+        // Validasi input
+        $request->validate([
+            'dokumen_penetapan' => 'nullable|file|mimes:pdf|max:2048',
+            'dokumen_pelaksanaan' => 'nullable|file|mimes:pdf|max:2048',
+            'dokumen_evaluasi' => 'nullable|file|mimes:pdf|max:2048',
+            'dokumen_pengendalian' => 'nullable|file|mimes:pdf|max:2048',
+            'dokumen_peningkatan' => 'nullable|file|mimes:pdf|max:2048',
+        ]);
 
         // Simpan data ke tabel penetapan
         $penetapan = PenetapanModel::create([
@@ -84,8 +91,23 @@ class Kriteria1Controller extends Controller {
     {
         if ($request->hasFile($field)) {
             $file = $request->file($field);
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $path = $file->storeAs('kriteria1', $filename, 'public');
+
+            // Validasi ekstensi file: hanya PDF
+            if (strtolower($file->getClientOriginalExtension()) !== 'pdf') {
+                throw new \Exception('File yang diunggah pada ' . $field . ' harus berupa PDF.');
+            }
+
+            // Validasi ukuran maksimal: 2MB (dalam byte = 2 * 1024 * 1024)
+            if ($file->getSize() > 2 * 1024 * 1024) {
+                throw new \Exception('Ukuran file pada ' . $field . ' tidak boleh lebih dari 2MB.');
+            }
+
+            // Buat nama file unik
+            $finalName = Str::random(15) . '.pdf';
+
+            // Simpan file
+            $path = $file->storeAs('kriteria1', $finalName, 'public');
+
             return $path;
         }
         return null;
