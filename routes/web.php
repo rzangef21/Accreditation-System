@@ -4,6 +4,8 @@ use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Kriteria1Controller;
 use App\Http\Controllers\Kriteria2Controller;
+use App\Http\Controllers\Kriteria3Controller;
+use App\Http\Controllers\Kriteria4Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +25,8 @@ Route::post('/storeAll', [Kriteria1Controller::class, 'storeValidasi1'])->name('
 //Kriteria 2
 Route::get('/kriteria2', [Kriteria2Controller::class, 'kriteria2'])->name('kriteria2'); //Menampilkan input data kriteria 2
 
-//Kriteria3
-Route::get('/kriteria2', [Kriteria2Controller::class, 'kriteria3'])->name('kriteria3'); //Menampilkan input data kriteria 3
+//Kriteria 3
+Route::get('/kriteria3', [Kriteria3Controller::class, 'kriteria3'])->name('kriteria3'); //Menampilkan input data kriteria 3
+
+//Kriteria 4
+Route::get('/kriteria4', [Kriteria4Controller::class, 'kriteria4'])->name('kriteria4'); //Menampilkan input data kriteria 4
