@@ -8,6 +8,7 @@ use App\Http\Controllers\Kriteria3Controller;
 use App\Http\Controllers\Kriteria4Controller;
 use App\Http\Controllers\Kriteria5Controller;
 use App\Http\Controllers\Kriteria6Controller;
+use App\Http\Controllers\Kriteria7Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,6 @@ Route::get('/kriteria5', [Kriteria5Controller::class, 'kriteria5'])->name('krite
 
 //Kriteria 6
 Route::get('/kriteria6', [Kriteria6Controller::class, 'kriteria6'])->name('kriteria6'); //Menampilkan input data kriteria 6
+
+//Kriteria 7
+Route::get('/kriteria7', [Kriteria7Controller::class, 'kriteria7'])->name('kriteria7'); //Menampilkan input data kriteria 7
