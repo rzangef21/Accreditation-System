@@ -30,3 +30,6 @@ Route::get('/kriteria3', [Kriteria3Controller::class, 'kriteria3'])->name('krite
 
 //Kriteria 4
 Route::get('/kriteria4', [Kriteria4Controller::class, 'kriteria4'])->name('kriteria4'); //Menampilkan input data kriteria 4
+
+//Kriteria 5
+Route::get('/kriteria5', [Kriteria4Controller::class, 'kriteria5'])->name('kriteria5'); //Menampilkan input data kriteria 5
