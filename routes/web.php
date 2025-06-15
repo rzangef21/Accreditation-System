@@ -29,6 +29,7 @@ Route::post('/storeAll', [Kriteria1Controller::class, 'storeValidasi1'])->name('
 
 //Kriteria 2
 Route::get('/kriteria2', [Kriteria2Controller::class, 'kriteria2'])->name('kriteria2'); //Menampilkan input data kriteria 2
+Route::post('/kriteria2/storeAll', [Kriteria2Controller::class, 'storeValidasi1'])->name('kriteria2.storeAll'); //Menyimpan data kriteria 2 semua
 
 //Kriteria 3
 Route::get('/kriteria3', [Kriteria3Controller::class, 'kriteria3'])->name('kriteria3'); //Menampilkan input data kriteria 3
