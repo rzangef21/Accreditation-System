@@ -8,7 +8,7 @@ use App\Models\PelaksanaanModel;
 use App\Models\EvaluasiModel;
 use App\Models\PengendalianModel;
 use App\Models\PeningkatanModel;
-use App\Models\Validasi1Model;
+use App\Models\ValidasiModel;
 use Illuminate\Support\Str;
 
 class Kriteria2Controller extends Controller
@@ -74,7 +74,7 @@ class Kriteria2Controller extends Controller
         ]);
 
         // Simpan ke tabel validasi1
-        Validasi1Model::create([
+        ValidasiModel::create([
             'id_penetapan' => $penetapan->id_penetapan,
             'id_pelaksanaan' => $pelaksanaan->id_pelaksanaan,
             'id_evaluasi' => $evaluasi->id_evaluasi,
