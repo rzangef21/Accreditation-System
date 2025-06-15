@@ -26,6 +26,8 @@ use App\Http\Controllers\Kriteria9Controller;
 //Kriteria 1
 Route::get('/', [Kriteria1Controller::class, 'kriteria1'])->name('kriteria1'); //Menampilkan input data kriteria 1
 Route::post('/storeAll', [Kriteria1Controller::class, 'storeValidasi1'])->name('kriteria1.storeAll'); //Menyimpan data kriteria 1 semua
+Route::get('/feedback1', [Kriteria1Controller::class, 'feedback1'])->name('feedback1');
+Route::post('/feedback1/list', [Kriteria1Controller::class, 'list'])->name('feedback1.list');
 
 //Kriteria 2
 Route::get('/kriteria2', [Kriteria2Controller::class, 'kriteria2'])->name('kriteria2'); //Menampilkan input data kriteria 2

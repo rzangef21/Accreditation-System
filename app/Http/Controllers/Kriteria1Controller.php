@@ -12,6 +12,58 @@ use App\Models\PeningkatanModel;
 use App\Models\ValidasiModel;
 
 class Kriteria1Controller extends Controller {
+    public function feedback1() {
+        $breadcrumb = (object) [
+        'title' => '',
+        'list' => ['Kriteria 1']
+        ];
+
+        $activeMenu = 'feedback1';
+
+        return view('feedback.feedback1', [
+            'breadcrumb' => $breadcrumb,
+            'activeMenu' => $activeMenu
+        ]);
+    }
+
+    public function list(Request $request)
+    {
+        $query = ValidasiModel::with([
+            'penetapan:id_penetapan,nama_dokumen',
+            'validasi_berjenjang' => function ($q) {
+                $q->orderBy('level_validasi');
+            }
+        ])
+        ->where('level_validasi', 'tingkat1'); // hanya level awal (user id=10)
+
+        return DataTables::of($query)
+            ->addColumn('id_dokumen', function ($row) {
+                return $row->id_validasi;
+            })
+            ->addColumn('nama_dokumen', function ($row) {
+                return $row->penetapan->nama_dokumen ?? '-';
+            })
+            ->addColumn('status', function ($row) {
+                return $row->validasi_berjenjang->map(function($v) {
+                    return ucfirst($v->level_validasi) . ': ' . ucfirst($v->status);
+                })->implode('<br>');
+            })
+            ->addColumn('komentar', function ($row) {
+                return $row->validasi_berjenjang
+                    ->where('status', 'ditolak')
+                    ->map(function($v) {
+                        return '<strong>' . ucfirst($v->level_validasi) . ':</strong> ' . e($v->komentar);
+                    })->implode('<br>');
+            })
+            ->addColumn('aksi', function ($row) {
+                $btn  = '<button onclick="modalAction(\''.url('' .  '').'\')" class="btn btn-warning btn-sm">Edit</button> ';
+                $btn .= '<button onclick="modalAction(\''.url('').'\')" class="btn btn-danger btn-sm">Hapus</button>';
+                return $btn;
+            })
+            ->rawColumns(['status', 'komentar', 'aksi'])
+            ->make(true);
+    }
+
     public function storeValidasi1(Request $request){
         // Validasi input
         $request->validate([

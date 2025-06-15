@@ -54,4 +54,7 @@ class ValidasiModel extends Model
     {
         return $this->belongsTo(UserModel::class, 'id_user', 'id_user');
     }
+    public function validasi_berjenjang(){
+        return $this->hasMany(ValidasiModel::class, 'id_penetapan', 'id_penetapan');
+    }
 }

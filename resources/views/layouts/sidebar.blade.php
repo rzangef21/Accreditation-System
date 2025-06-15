@@ -63,7 +63,7 @@
           {{-- Sidebar untuk Melihat Data--}}
           <li class="nav-header">Lihat Data</li>
           <li class="nav-item">
-            <a href="{{ url('') }}" class="nav-link {{ ($activeMenu == '')? 'active' : '' }} ">
+            <a href="{{ url('feedback1') }}" class="nav-link {{ ($activeMenu == 'feedback1')? 'active' : '' }} ">
               <i class="nav-icon fas fa-envelope"></i>
               <p>Kriteria 1</p>
             </a>

@@ -9,9 +9,8 @@
     <table class="table table-bordered table-striped table-hover table-sm" id="feedback1" width="100%">
       <thead>
         <tr>
-          <th>ID Dokumen</th>
-          <th>Nama Dokumen</th>
-          <th>Tahap</th>
+          <th>ID</th>
+          <th>Penetapan</th>
           <th>Status</th>
           <th>Komentar</th>
           <th>Aksi</th>
@@ -52,12 +51,6 @@
         },
         {
         data: "nama_dokumen",
-        className: "",
-        orderable: false,
-        searchable: false,
-        },
-        {
-        data: "tahap.nama_tahap",
         className: "",
         orderable: false,
         searchable: false,
