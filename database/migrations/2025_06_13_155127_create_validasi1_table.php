@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('validasi1', function (Blueprint $table) {
-            $table->id('id_validasi1'); // Primary Key
+        Schema::create('validasi', function (Blueprint $table) {
+            $table->id('id_validasi'); // Primary Key
 
             // Foreign Key fields
             $table->unsignedBigInteger('id_penetapan');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_peningkatan');
             $table->unsignedBigInteger('id_user');
 
-            // ENUM and komentar
+            $table->enum('level_validasi', ['tingkat1', 'tingkat2', 'tingkat3']);
             $table->enum('status', ['menunggu', 'disetujui', 'ditolak'])->default('menunggu');
             $table->text('komentar')->nullable();
 
