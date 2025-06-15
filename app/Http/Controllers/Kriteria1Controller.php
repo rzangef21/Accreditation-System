@@ -9,7 +9,7 @@ use App\Models\PelaksanaanModel;
 use App\Models\EvaluasiModel;
 use App\Models\PengendalianModel;
 use App\Models\PeningkatanModel;
-use App\Models\Validasi1Model;
+use App\Models\ValidasiModel;
 
 class Kriteria1Controller extends Controller {
     public function storeValidasi1(Request $request){
@@ -73,13 +73,14 @@ class Kriteria1Controller extends Controller {
         ]);
 
         // Simpan ke tabel validasi1
-        Validasi1Model::create([
+        ValidasiModel::create([
             'id_penetapan' => $penetapan->id_penetapan,
             'id_pelaksanaan' => $pelaksanaan->id_pelaksanaan,
             'id_evaluasi' => $evaluasi->id_evaluasi,
             'id_pengendalian' => $pengendalian->id_pengendalian,
             'id_peningkatan' => $peningkatan->id_peningkatan,
             'id_user' => 10, // sesuaikan kolom
+            'level_validasi' => 'tingkat1',
             'status' => $request->input('action') === 'submit' ? 'menunggu' : 'menunggu',
             'komentar' => null,
         ]);
