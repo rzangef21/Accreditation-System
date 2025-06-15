@@ -29,13 +29,16 @@ class Kriteria1Controller extends Controller {
     public function list(Request $request)
     {
         $query = ValidasiModel::with([
-            'penetapan:id_penetapan,nama_dokumen',
+            'penetapan:id_penetapan,nama_dokumen,id_kriteria',
             'validasi_berjenjang' => function ($q) {
                 $q->orderBy('level_validasi');
             }
         ])
-        ->where('level_validasi', 'tingkat1'); // hanya level awal (user id=10)
-
+        ->where('level_validasi', 'tingkat1') // hanya level awal (user id=10)
+        ->whereHas('penetapan', function ($q) {
+            $q->where('id_kriteria', 'K-01'); // filter berdasarkan kriteria
+        });
+        
         return DataTables::of($query)
             ->addColumn('id_dokumen', function ($row) {
                 return $row->id_validasi;
