@@ -15,7 +15,7 @@
                 {{-- Input Judul Penetapan --}}
                 <div class="form-group">
                     <label for="judul_penetapan">Judul Penetapan</label>
-                    <input type="text" name="judul_penetapan" id="judul_penetapan" class="form-control">
+                    <input type="text" name="judul_penetapan" id="judul_penetapan" class="form-control" required>
                 </div>
 
                 {{-- Input teks panjang dengan Summernote --}}
@@ -43,7 +43,7 @@
                 {{-- Input Judul Pelaksanaan --}}
                 <div class="form-group">
                     <label for="judul_pelaksanaan">Judul Pelaksanaan</label>
-                    <input type="text" name="judul_pelaksanaan" id="judul_pelaksanaan" class="form-control">
+                    <input type="text" name="judul_pelaksanaan" id="judul_pelaksanaan" class="form-control" required>
                 </div>
 
                 {{-- Input teks panjang dengan Summernote --}}
@@ -71,7 +71,7 @@
                 {{-- Input Judul Penetapan --}}
                 <div class="form-group">
                     <label for="judul_evaluasi">Judul Evaluasi</label>
-                    <input type="text" name="judul_evaluasi" id="judul_evaluasi" class="form-control">
+                    <input type="text" name="judul_evaluasi" id="judul_evaluasi" class="form-control" required>
                 </div>
 
                 {{-- Input teks panjang dengan Summernote --}}
@@ -99,7 +99,7 @@
                 {{-- Input Judul Pengendalian --}}
                 <div class="form-group">
                     <label for="judul_pengendalian">Judul Pengendalian</label>
-                    <input type="text" name="judul_pengendalian" id="judul_pengendalian" class="form-control">
+                    <input type="text" name="judul_pengendalian" id="judul_pengendalian" class="form-control" required>
                 </div>
 
                 {{-- Input teks panjang dengan Summernote --}}
@@ -127,7 +127,7 @@
                 {{-- Input Judul Penetapan --}}
                 <div class="form-group">
                     <label for="judul_peningkatan">Judul Peningkatan</label>
-                    <input type="text" name="judul_peningkatan" id="judul_peningkatan" class="form-control">
+                    <input type="text" name="judul_peningkatan" id="judul_peningkatan" class="form-control" required>
                 </div>
 
                 {{-- Input teks panjang dengan Summernote --}}
@@ -239,6 +239,30 @@
                     ['insert', ['link', 'picture', 'video']],
                     ['view', ['fullscreen', 'codeview', 'help']]
                 ]
+            });
+            $('form').on('submit', function(e) {
+                const requiredFields = [
+                    { id: '#judul_penetapan', label: 'Judul Penetapan' },
+                    { id: '#judul_pelaksanaan', label: 'Judul Pelaksanaan' },
+                    { id: '#judul_evaluasi', label: 'Judul Evaluasi' },
+                    { id: '#judul_pengendalian', label: 'Judul Pengendalian' },
+                    { id: '#judul_peningkatan', label: 'Judul Peningkatan' }
+                ];
+
+                let valid = true;
+                let messages = [];
+
+                requiredFields.forEach(field => {
+                    if ($(field.id).val().trim() === '') {
+                        valid = false;
+                        messages.push(field.label + ' wajib diisi.');
+                    }
+                });
+
+                if (!valid) {
+                    e.preventDefault();
+                    alert(messages.join('\n'));
+                }
             });
         });
     </script>
